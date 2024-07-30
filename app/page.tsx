@@ -1,113 +1,128 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from 'react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className='bg-[#101010] text-black min-h-screen grid grid-cols-2 gap-4 p-4'>
+      <div className='col-span-full text-center mb-8'>
+          <h1 className='text-[3rem] font-bold text-[#08b2aa]'>
+            Frequently Asked Questions
+          </h1>
       </div>
+      <div className='p-4'>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>What is the mode of Hackathon?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>VCET Hackathon'23 Unleash the unreal will be held offline</h2>
+            </AccordionContent>
+          </AccordionItem>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+          <AccordionItem value="item-2" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>Who can participate?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Any UG student is welcome to participate in this event. While experienced coding and programming is a huge plus, teams will also need people with strong presentation skills and unique ideas.</h2>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>Can a pass out student participate in the event?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>No, every member of the team must be a current student of a university or a college. Members from different colleges allowed.</h2>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-4" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>What are the Problem Statements that can be selected?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Problem Statements will be provided from our end. You have to submit abstracts for all 5 Problem Statements, out of which 1 will be allocated.</h2>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-5" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>How much is the entry fee and the last date for registration?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Entry fee is 500/- per head and the last date of registration is September 22, 2023.</h2>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-6" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>Which payment methods are accepted?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Payment can be made using UPI or NEFT.</h2>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
+      <div className='p-4'>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-7">
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>Will a dataset be provided?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>No, the data has to be collected on your own</h2>
+            </AccordionContent>
+          </AccordionItem>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <AccordionItem value="item-8" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>What is the selection criteria?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Innovation, Technology, Completion & Business Values are some of the criterias.</h2>
+            </AccordionContent>
+          </AccordionItem>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <AccordionItem value="item-9" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>When and where will the final result be announced?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>Results will be announced at the end of the Final Pitching round.</h2>
+            </AccordionContent>
+          </AccordionItem>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <AccordionItem value="item-10" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>What is the cancellation policy like?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>There is no cancellation policy and payment once done will not be refunded.</h2>
+            </AccordionContent>
+          </AccordionItem>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <AccordionItem value="item-11" className='mt-3'>
+            <AccordionTrigger className='bg-[#08b2aa] rounded-t-md h-16 text-[20px] flex items-center px-3'>
+              <h2>Having another question that is not answered in FAQ?</h2>
+            </AccordionTrigger>
+            <AccordionContent className='bg-[#08a79d] rounded-b-md text-black text-[20px] p-4'>
+              <h2>You can contact us via mail or drop your query in the comment sections on our Social Media handles.</h2>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
-    </main>
+    </div>
   );
 }
+
+export default Page;

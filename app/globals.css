@@ -1,33 +1,50 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@tailwind utilities;.glitch {
+  position: relative;
+  color: #08b2aa;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: 'Arial', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.glitch:before, .glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #08b2aa;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, rgba(255, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 30%);
+  z-index: 1;
+  animation: glitch-animation 1s infinite linear;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.glitch:after {
+  left: 2px;
+  text-shadow: -1px 0 red, 1px 0 blue;
+  animation: glitch-animation-2 1s infinite linear;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@keyframes glitch-animation {
+  0% { clip: rect(0, 0, 0, 0); }
+  20% { clip: rect(0, 0, 0, 0); }
+  40% { clip: rect(0, 0, 0, 0); }
+  60% { clip: rect(0, 0, 0, 0); }
+  80% { clip: rect(0, 0, 0, 0); }
+  100% { clip: rect(0, 0, 0, 0); }
+}
+
+@keyframes glitch-animation-2 {
+  0% { clip: rect(0, 0, 0, 0); }
+  20% { clip: rect(0, 0, 0, 0); }
+  40% { clip: rect(0, 0, 0, 0); }
+  60% { clip: rect(0, 0, 0, 0); }
+  80% { clip: rect(0, 0, 0, 0); }
+  100% { clip: rect(0, 0, 0, 0); }
 }
